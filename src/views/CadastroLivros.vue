@@ -54,6 +54,7 @@ export default {
                 <input class="form-control" type="text" name="" id="" placeholder="Editora" v-model="editora" />
                 <select class="form-select" name="" id="" v-model="categoria">
                     <option disabled value="">Categoria</option>
+                    <option>Horror</option>
                     <option>Autoajuda</option>
                     <option>Ação e aventura</option>
                     <option>Biografia</option>

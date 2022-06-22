@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <div class="col-12 text-center">
       <p>Tudo de livros que você procura está aqui!</p>
-      <h1>Project Name</h1>
+      <h1>Books Everywhere</h1>
       <p>Criado por Paulo José Ramos Zem e Felipe Rotermel usando:</p>
       <p><img src="@/assets/vue3-logo.png"></p>
     </div>

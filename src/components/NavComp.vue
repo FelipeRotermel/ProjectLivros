@@ -6,16 +6,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <RouterLink class="navbar-brand" to="/"><h3>Project Name</h3></RouterLink>
-                </li>
-                <li class="nav-item">
-                    <RouterLink class="navbar-brand" to="/"><h4>Home</h4></RouterLink>
-                </li>
-                <li class="nav-item">
-                    <RouterLink class="navbar-brand" to="/cadastrolivros"><h4>Cadastro de Livros</h4></RouterLink>
+                    <RouterLink class="navbar-brand" to="/"><h3>Books Everywhere!</h3></RouterLink>
                 </li>
                 <li class="nav-item">
                     <RouterLink class="navbar-brand" to="/login"><h4>Login</h4></RouterLink>
+                </li>
+                <li class="nav-item">
+                    <RouterLink class="navbar-brand" to="/cadastrolivros"><h4>Cadastro de Livros</h4></RouterLink>
                 </li>
             </ul>
         </div>
