@@ -8,8 +8,14 @@
                 <li class="nav-item">
                     <RouterLink class="navbar-brand" to="/"><h3>Books Everywhere!</h3></RouterLink>
                 </li>
+                  <li class="nav-item">
+                    <RouterLink class="navbar-brand" to="/"><h4>Home</h4></RouterLink>
+                </li>
                 <li class="nav-item">
                     <RouterLink class="navbar-brand" to="/login"><h4>Login</h4></RouterLink>
+                </li>
+                <li class="nav-item">
+                    <RouterLink class="navbar-brand" to="/registro"><h4>Registro</h4></RouterLink>
                 </li>
                 <li class="nav-item">
                     <RouterLink class="navbar-brand" to="/cadastrolivros"><h4>Cadastro de Livros</h4></RouterLink>

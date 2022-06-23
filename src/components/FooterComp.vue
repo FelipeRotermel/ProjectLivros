@@ -19,6 +19,7 @@
     .container-fluid {
         background-color: #73048f;
         border-top: 5px solid grey;
-    }
 
+    }
+    
 </style>

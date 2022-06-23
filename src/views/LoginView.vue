@@ -31,7 +31,7 @@
             </div>
 
             <div>
-              <p class="mb-0">Não tem uma conta?   <a href="/registro" class="text-white-50 fw-bold">Registre-se!</a>
+              <p class="mb-0">Não tem uma conta?   <router-link class="text-white-50fw-bold" to="/registro">Cadastre-se</router-link>
               </p>
             </div>
 
