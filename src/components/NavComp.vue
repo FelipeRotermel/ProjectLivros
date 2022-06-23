@@ -1,24 +1,21 @@
 <script>
 </script>
 <template>
-  <div class="container-fluid" id="NavBar">
+  <div class="container-fluid fixed-top" id="NavBar">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <RouterLink class="navbar-brand" to="/"><h3>Books Everywhere!</h3></RouterLink>
+                    <a href="#" class="navbar-brand"><h3>Books Everywhere!</h3></a>
                 </li>
                   <li class="nav-item">
                     <RouterLink class="navbar-brand" to="/"><h4>Home</h4></RouterLink>
                 </li>
                 <li class="nav-item">
-                    <RouterLink class="navbar-brand" to="/login"><h4>Login</h4></RouterLink>
-                </li>
-                <li class="nav-item">
-                    <RouterLink class="navbar-brand" to="/registro"><h4>Registro</h4></RouterLink>
-                </li>
-                <li class="nav-item">
                     <RouterLink class="navbar-brand" to="/cadastrolivros"><h4>Cadastro de Livros</h4></RouterLink>
+                </li>
+                <li class="nav-item">
+                    <RouterLink class="navbar-brand" to="/login"><h4>Login</h4></RouterLink>
                 </li>
             </ul>
         </div>
