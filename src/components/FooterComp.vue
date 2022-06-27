@@ -16,9 +16,12 @@
 </template>
 
 <style scoped>
-    .container-fluid {
-        background-color: #73048f;
-        border-top: 5px solid grey;
-        margin-top: 50px;
-    }
+.container-fluid {
+    background-color: #73048f;
+    border-top: 5px solid grey;
+    margin-top: 50px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
 </style>

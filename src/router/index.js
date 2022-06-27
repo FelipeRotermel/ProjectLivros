@@ -10,6 +10,21 @@ const router = createRouter({
       component: HomeView
     },
     {
+      path: '/autor',
+      name: 'Autores',
+      component: () => import('../views/CadastroAutor.vue')
+    },
+    {
+      path: '/editora',
+      name: 'editora',
+      component: () => import('../views/CadastroEditora.vue')
+    },
+    {
+      path: '/categoria',
+      name: 'categoria',
+      component: () => import('../views/CadastroCategoria.vue')
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('../views/LoginView.vue')
