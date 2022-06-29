@@ -63,7 +63,8 @@ export default {
                     </tr>
                 </tbody>
             </table>
-        </div>
+       <iframe width="110" height="200" src="https://www.myinstants.com/instant/ohhh-my-god-26392/embed/" frameborder="0" scrolling="no"></iframe>
+       </div>
     </div>
 </template>
 
