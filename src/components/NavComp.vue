@@ -21,9 +21,7 @@
             </RouterLink>
           </li>
           <li class="nav-item dropdown">
-            <a class="navbar-brand dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <h4>Cadastro</h4>
-            </a>
+              <div class="navbar-brand dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown">Cadastro</div>
             <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
               <li>
                 <RouterLink class="dropdown-item" to="/categoria">
@@ -55,6 +53,10 @@
 
 <style scoped>
 
+* {
+  font-weight: bolder;
+}
+
 .navbar-brand h3 {
   margin-top: 9px;
   transition: 0.25s;
@@ -69,6 +71,7 @@ h4 {
   margin-left: 30px;
   color: white;
   transition: 0.25s;
+  font-size: 24px;
 }
 
 .navbar-brand h4:hover {
@@ -77,6 +80,19 @@ h4 {
 
 .nav-link {
 margin-top: 100px;
+}
+
+#dropdown {
+  margin-top: 5px;
+  margin-left: 30px;
+  color: white;
+  transition: 0.25s;
+  font-size: 24px;
+  transition: 0.25s;
+}
+
+#dropdown:hover {
+  transform: scale(1.1);
 }
 
 #NavBar {
