@@ -51,7 +51,7 @@
 
 <style scoped>
 .vh-100 {
-  margin-top: 50px;
-  margin-bottom: 7%;
+  margin-top: 5px;
+  margin-bottom: 5%;
 }
 </style>

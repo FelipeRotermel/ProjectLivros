@@ -45,6 +45,6 @@
 <style scoped>
 .vh-100 {
   margin-top: 50px;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 }
 </style>
