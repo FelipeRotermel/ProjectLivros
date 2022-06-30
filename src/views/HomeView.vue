@@ -7,9 +7,8 @@
       <p>Tudo de livros que você procura está aqui!</p>
       <h1>Books Everywhere</h1>
       <p>Criado por Paulo José Ramos Zem e Felipe Rotermel usando:</p>
-      <p><img src="https://static.wikia.nocookie.net/5c426b5e-32e1-437c-9692-16667d48bb02/scale-to-width/755"></p>
-      <p id="anfitras">TEU PAI HAHAHAHAHHAHAHAHAHAHAHAHAHHAHAHAHA</p>
-    <iframe width="150" height="200" src="https://www.myinstants.com/instant/aughhhh-tiktok-40656/embed/" frameborder="0" scrolling="no"></iframe>
+      <p><img src="@/assets/pobre.png"></p>
+    <p><iframe width="150" height="200" src="https://www.myinstants.com/instant/aughhhh-tiktok-40656/embed/" frameborder="0" scrolling="no"></iframe></p>
    </div>
   </div>
 </template>
