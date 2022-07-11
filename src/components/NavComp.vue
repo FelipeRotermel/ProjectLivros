@@ -34,7 +34,7 @@
                 </RouterLink>
               </li>
               <li>
-                <RouterLink class="dropdown-item" to="/autor">
+                <RouterLink class="dropdown-item" to="/autores">
                   Autores
                 </RouterLink>
               </li>
