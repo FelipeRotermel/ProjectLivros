@@ -24,12 +24,12 @@ export default {
         this.obra_p = "";
         },
         async excluir(autor) {
-            await axios.delete(`http://localhost:4000/autores/${autor.id}`);
-            const indice = this.autores.indexOf(autor);
-            this.autores.splice(indice, 1);
+                await axios.delete(`http://localhost:4000/autores/${autor.id}`);
+                const indice = this.autores.indexOf(autor);
+                this.autores.splice(indice, 1);
+            },
         },
-    },
-};
+    };
 </script>
 
 <template>
@@ -59,7 +59,7 @@ export default {
                         <th>{{ autor.id }}</th>
                         <th>{{ autor.nome }}</th>
                         <th>{{ autor.obra }}</th>
-                        <th><button class="btn btn-danger btn-sm" @click="excluir">Excluir</button></th>
+                        <th><button class="btn btn-danger btn-sm" @click="excluir(autor)">Excluir</button></th>
                     </tr>
                 </tbody>
             </table>

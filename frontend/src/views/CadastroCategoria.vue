@@ -1,37 +1,36 @@
 <script>
-import { v4 as uuid } from "uuid";
+import axios from "axios"
 export default {
     data() {
         return {
-            categoria: "",
-            descricao: "",
-            livros: [
-                { id: 1,   categoria: "Fantasia", descricao: "Embarque em algo completamente novo e inédito com essa categoria",},
-                { id: 2,   categoria: "Ficção", descricao: "Uma categoria que gosta de viajar na maionese", },
-            ],
-        };
+            nova_cate: "",
+            descricacao: "",
+            categorias: [],
+        }
     },
-    methods: {
-        salvar() {
-            if (this.livro !== "") {
-                const id = uuid();
-                this.livros.push({
-                    id: id,
-                    categoria: this.categoria,
-                    descricao: this.descricao,
-                });
-                this.categoria = "";
-                this.descricao = "";
-            } else {
-                alert("Informe a categoria!")
-            }
-        },
-        excluir(livro) {
-            const indice = this.livros.indexOf(livro);
-            this.livros.splice(indice, 1);
-        },
+    async created (){
+      const categorias = await axios.get("http://localhost:4000/categorias")
+      this.catetegorias = categorias.data;
     },
+    methods:{
+        async salvar() {
+            const categoria = {
+                catego: this.nova_cate,
+                desc: this.descricacao,
+            };
+            const categoria_criada = await axios.get("http://localhost:4000/categorias", categoria)
+            this.categorias.push(categoria_criada.data);
+            this.nova_cate = "";
+            this.descricacao = "";
+        },
+            async excluir(categoria) {
+            await axios.delete(`http://localhost:4000/categorias/${categoria.id}`);
+            const indice = this.categorias.indexOf(categoria);
+            this.categorias.splice(indice, 1);
+        },
+  },
 };
+
 </script>
 
 <template>
@@ -42,24 +41,26 @@ export default {
             </div>
             <div class="input-group">
                 <input class="form-control" type="text" name="" id="" placeholder="Adicione sua Categoria"
-                    v-model="categoria" />
+                    v-model="nova_cate" />
                 <input class="form-control" type="text" name="" id="" placeholder="Adicione sua Descrição"
-                    v-model="descricao" />
+                    v-model="descricacao" />
                 <button class="btn btn-secondary" @click="salvar">Salvar</button>
             </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th scope="col">ID</th>
                         <th scope="col">Categoria</th>
                         <th scope="col">Descrição</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="livro in livros" :key="livro.id">
-                        <th>{{ livro.categoria }}</th>
-                        <th>{{ livro.descricao }} </th>
-                        <th><button class="btn btn-danger btn-sm" @click="excluir">Excluir</button></th>
+                    <tr v-for="categoria in categorias" :key="categoria.id">
+                        <th>{{ categoria.id }}</th>
+                        <th>{{ categoria.catego }}</th>
+                        <th>{{ categoria.desc }} </th>
+                        <th><button class="btn btn-danger btn-sm" @click="excluir(categoria)">Excluir</button></th>
                     </tr>
                 </tbody>
             </table>
