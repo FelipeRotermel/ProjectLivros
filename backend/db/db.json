@@ -1,9 +1,70 @@
 {
+  "cadastrolivros": [
+    {
+      "categoria": 3,
+      "id": 1
+    },
+    {
+      "categoria": 3,
+      "id": 2
+    },
+    {
+      "categoria": 3,
+      "id": 3
+    },
+    {
+      "categoria": 3,
+      "id": 4
+    },
+    {
+      "categoria": 3,
+      "id": 5
+    },
+    {
+      "categoria": 3,
+      "id": 6
+    },
+    {
+      "categoria": 3,
+      "id": 7
+    },
+    {
+      "categoria": 3,
+      "id": 8
+    },
+    {
+      "categoria": 2,
+      "id": 9
+    },
+    {
+      "categoria": 2,
+      "id": 10
+    },
+    {
+      "categoria": 2,
+      "id": 11
+    }
+  ],
   "editora": [
     {
       "edit": "Jambo",
       "site": "jeej",
       "id": 1
+    },
+    {
+      "edit": "Companhia da Letras",
+      "site": "https://www.companhiadasletras.com.br/",
+      "id": 2
+    },
+    {
+      "edit": "Aleph",
+      "site": "https://editoraaleph.com.br/",
+      "id": 3
+    },
+    {
+      "edit": "Rocco",
+      "site": "https://www.rocco.com.br/",
+      "id": 4
     }
   ],
   "categorias": [
@@ -11,6 +72,26 @@
       "catego": "Horror",
       "desc": "Horripilante! urrrr",
       "id": 1
+    },
+    {
+      "catego": "Ficção ",
+      "desc": "Uma categoria maluca",
+      "id": 2
+    },
+    {
+      "catego": "Fantasia",
+      "desc": "Viaje para um mundo novo e afins",
+      "id": 3
+    },
+    {
+      "catego": "Auto-ajuda",
+      "desc": "Categoria pra por sua vida no lugar",
+      "id": 4
+    },
+    {
+      "catego": "Sobrevivencia",
+      "desc": "Categoria pra te ajudar nos momentos dificieis ",
+      "id": 5
     }
   ],
   "autores": [
@@ -18,6 +99,16 @@
       "nome": "J.K Rowling",
       "obra": "Harry potter , saga inteira",
       "id": 1
+    },
+    {
+      "nome": "C.S. Lewis",
+      "obra": "Cronicas de narnia",
+      "id": 2
+    },
+    {
+      "nome": "George Orwell",
+      "obra": "1987",
+      "id": 3
     }
   ]
 }
