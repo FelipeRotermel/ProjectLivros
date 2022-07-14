@@ -24,7 +24,7 @@
               <div class="navbar-brand dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown">Cadastro</div>
             <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
               <li>
-                <RouterLink class="dropdown-item" to="/categoria">
+                <RouterLink class="dropdown-item" to="/categorias">
                   Categoria
                 </RouterLink>
               </li>

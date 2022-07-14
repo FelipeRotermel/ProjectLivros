@@ -18,7 +18,7 @@ export default {
                 catego: this.nova_cate,
                 desc: this.descricacao,
             };
-            const categoria_criada = await axios.get("http://localhost:4000/categorias", categoria)
+            const categoria_criada = await axios.post("http://localhost:4000/categorias", categoria)
             this.categorias.push(categoria_criada.data);
             this.nova_cate = "";
             this.descricacao = "";

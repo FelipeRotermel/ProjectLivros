@@ -1,37 +1,35 @@
 <script>
-import { v4 as uuid } from "uuid";
+import axios from "axios"
 export default {
     data() {
         return {
-            editora: "",
-            site: "",
-            livros: [
-                { id: 1, editora: "Jambo", site: "jamboeditora.com.br" },
-                { id: 2, editora: "Letras do Brasil", site: "letrasdobrasil.com.br", },
-            ],
+            novo_editor: "",
+            site_editora: "",
+            editoras: [],
         };
     },
-    methods: {
-        salvar() {
-            if (this.livro !== "") {
-                const id = uuid();
-                this.livros.push({
-                    id: id,
-                    editora: this.editora,
-                    site: this.site,
-                });
-                this.editora = "";
-                this.site = "";
-            } else {
-                alert("Informe a editora ou o site!")
-            }
-        },
-        excluir(livro) {
-            const indice = this.livros.indexOf(livro);
-            this.livros.splice(indice, 1);
-        },
+    async created() {
+        const editoras = await axios.get("http://localhost:4000/editora")
+        this.editoras = editoras.data
     },
-};
+    methods: {
+        async salvar() {
+          const editor = {
+            edit: this.novo_editor,
+            site: this.site_editora,
+        };
+        const editor_criado = await axios.post("http://localhost:4000/editora", editor);
+        this.editoras.push(editor_criado.data);
+        this.novo_editor = "";
+        this.site_editora = "";
+        },
+        async excluir(editor) {
+                await axios.delete(`http://localhost:4000/editora/${editor.id}`);
+                const indice = this.editoras.indexOf(editor);
+                this.editoras.splice(indice, 1);
+            },
+        },
+    };
 </script>
 
 <template>
@@ -42,9 +40,9 @@ export default {
             </div>
             <div class="input-group">
                 <input class="form-control" type="text" name="" id="" placeholder="Adicione uma Editora"
-                    v-model="editora" />
+                    v-model="novo_editor" />
                 <input class="form-control" type="text" name="" id="" placeholder="Adicione o site dela"
-                    v-model="site" />
+                    v-model="site_editora" />
                 <button class="btn btn-secondary" @click="salvar">Salvar</button>
             </div>
             <table class="table table-striped">
@@ -56,10 +54,10 @@ export default {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="livro in livros" :key="livro.id">
-                        <th>{{ livro.editora }}</th>
-                        <th>{{ livro.site }} </th>
-                        <th><button class="btn btn-danger btn-sm" @click="excluir">Excluir</button></th>
+                    <tr v-for="editor in editoras" :key="editor.id">
+                        <th>{{ editor.edit }}</th>
+                        <th>{{ editor.site }} </th>
+                        <th><button class="btn btn-danger btn-sm" @click="excluir(editor)">Excluir</button></th>
                     </tr>
                 </tbody>
             </table>

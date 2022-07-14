@@ -1,9 +1,22 @@
 {
-  "categorias": [],
+  "editora": [
+    {
+      "edit": "Jambo",
+      "site": "jeej",
+      "id": 1
+    }
+  ],
+  "categorias": [
+    {
+      "catego": "Horror",
+      "desc": "Horripilante! urrrr",
+      "id": 1
+    }
+  ],
   "autores": [
     {
-      "nome": "C.S. Lewis",
-      "obra": "Narnia",
+      "nome": "J.K Rowling",
+      "obra": "Harry potter , saga inteira",
       "id": 1
     }
   ]
