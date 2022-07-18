@@ -1,4 +1,10 @@
 <script>
+import EditorasApi from "@/api/editoras.js";
+import CategoriasApi from "@/api/categorias.js";
+import AutoresApi from "@/api/autores.js";
+const editorasApi = new EditorasApi();
+const categoriasApi = new CategoriasApi();
+const autoresApi = new AutoresApi();
 import axios from "axios";
 export default {
   data() {
@@ -10,28 +16,29 @@ export default {
     };
   },
   async created() {
-    await this.buscarTodosOsAutores();
-    await this.buscarTodosAsCategorias();
-    await this.buscarTodosAsEditoras();
+    this.editoras = await editorasApi.buscarTodasAsEditoras;
+    this.categorias = await categoriasApi.buscarTodasAsCategorias;
+    this.autores = await autoresApi.buscarTodosOsAutores;
   },
   methods: {
-    async buscarTodosAsEditoras() {
-      const editoras = await axios.get("http://localhost:4000/editora");
-      this.editoras = editoras.data;
-    },
-    async buscarTodosAsCategorias() {
-      const categorias = await axios.get("http://localhost:4000/categorias");
-      this.categorias = categorias.data;
-    },
-    async buscarTodosOsAutores() {
-      const autores = await axios.get("http://localhost:4000/autores");
-      this.autores = autores.data;
-    },
     async salvar() {
-      await axios.post("http://localhost:4000/cadastrolivros", this.livro);
-      await this.buscarTodosAsEditoras();
-    },
+      if (this.livro.id) {
+        await editorasApi.atualizarEditora(this.time);
+        await categoriasApi.atualizarCategoria(this.time);
+        await autoresApi.atualizarAutor(this.time);
+      } else {
+        await editorasApi.adicionarEditora(this.time);
+        await categoriasApi.adicionarCategoria(this.time);
+        await autoresApi.adicionarAutor(this.time);
+      }
+      this.editoras = await editorasApi.buscarTodasAsEditoras();
+      this.categorias = await categoriasApi.buscarTodasAsCategorias();
+      this.autores = await autoresApi.buscarTodosOsAutores();
+      this.livro = {};
   },
+  async excluir(livro) {
+    await 
+  }
 };
 </script>
 
@@ -42,62 +49,23 @@ export default {
         <h2>Cadastro De Livros</h2>
       </div>
       <div class="input-group">
-        <input
-          class="form-control"
-          type="text"
-          name=""
-          id=""
-          placeholder="Livro"
-          v-model="livro"
-        />
-        <select
-          class="form-select"
-          name=""
-          placeholder="Categoria"
-          v-model="livro.categoria"
-        >
-          <option
-            v-for="categoria in categorias"
-            :key="categoria.id"
-            :value="categoria.id"
-          >
+        <input class="form-control" type="text" name="" placeholder="Livro" v-model="livro.nome" />
+        <select class="form-select" name="" placeholder="Categoria" v-model="livro.categoria" >
+          <option v-for="categoria in categorias" :key="categoria.id" :value="categoria.id" >
             {{ categoria.catego }}
           </option>
         </select>
-        <select
-          class="form-select"
-          placeholder="Editora"
-          name=""
-          id=""
-          v-model="editoras"
-        >
-          <option
-            v-for="editora in editoras"
-            :key="editora.id"
-            :value="editora.id"
-          >
+        <select class="form-select" placeholder="Editora" name="" v-model="livro.editoras">
+          <option v-for="editora in editoras" :key="editora.id" :value="editora.id" >
             {{ editora.edit }}
           </option>
         </select>
-        <select
-          class="form-select"
-          placeholder="Autor"
-          name=""
-          id=""
-          v-model="autores"
-        >
+        <select class="form-select" placeholder="Autor" name="" v-model="livro.autores" >
           <option v-for="autor in autores" :key="autor.id" :value="autor.id">
             {{ autor.nome }}
           </option>
         </select>
-        <input
-          class="form-control"
-          type="number"
-          name=""
-          id=""
-          placeholder="Preço"
-          v-model="preco"
-        />
+        <input class="form-control" type="number" name="" placeholder="Preço"  v-model="livro.preco"/>
         <button class="btn btn-secondary" @click="salvar">Salvar</button>
       </div>
       <table class="table table-striped">

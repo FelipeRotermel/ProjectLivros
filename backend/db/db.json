@@ -5,47 +5,28 @@
       "id": 1
     },
     {
-      "categoria": 3,
+      "[object Object]fwefwe": "",
       "id": 2
     },
     {
-      "categoria": 3,
+      "nome": "fewfwefwef",
       "id": 3
     },
     {
-      "categoria": 3,
+      "nome": "Biches",
       "id": 4
     },
     {
-      "categoria": 3,
+      "nome": "Biches",
       "id": 5
     },
     {
-      "categoria": 3,
+      "nome": "gergre",
+      "preco": 543534,
       "id": 6
-    },
-    {
-      "categoria": 3,
-      "id": 7
-    },
-    {
-      "categoria": 3,
-      "id": 8
-    },
-    {
-      "categoria": 2,
-      "id": 9
-    },
-    {
-      "categoria": 2,
-      "id": 10
-    },
-    {
-      "categoria": 2,
-      "id": 11
     }
   ],
-  "editora": [
+  "editoras": [
     {
       "edit": "Jambo",
       "site": "jeej",

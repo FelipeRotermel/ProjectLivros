@@ -29,7 +29,7 @@
                 </RouterLink>
               </li>
               <li>
-                <RouterLink class="dropdown-item" to="/editora">
+                <RouterLink class="dropdown-item" to="/editoras">
                   Editoras
                 </RouterLink>
               </li>

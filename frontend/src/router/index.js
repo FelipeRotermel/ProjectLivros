@@ -15,8 +15,8 @@ const router = createRouter({
       component: () => import('../views/CadastroAutor.vue')
     },
     {
-      path: '/editora',
-      name: 'editora',
+      path: '/editoras',
+      name: 'editoras',
       component: () => import('../views/CadastroEditora.vue')
     },
     {

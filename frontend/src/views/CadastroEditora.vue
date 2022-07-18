@@ -9,8 +9,8 @@ export default {
         };
     },
     async created() {
-        const editoras = await axios.get("http://localhost:4000/editora")
-        this.editoras = editoras.data
+        const editoras = await axios.get("http://localhost:4000/editoras");
+        this.editoras = editoras.data;
     },
     methods: {
         async salvar() {
@@ -18,13 +18,13 @@ export default {
             edit: this.novo_editor,
             site: this.site_editora,
         };
-        const editor_criado = await axios.post("http://localhost:4000/editora", editor);
+        const editor_criado = await axios.post("http://localhost:4000/editoras", editor);
         this.editoras.push(editor_criado.data);
         this.novo_editor = "";
         this.site_editora = "";
         },
         async excluir(editor) {
-                await axios.delete(`http://localhost:4000/editora/${editor.id}`);
+                await axios.delete(`http://localhost:4000/editoras/${editor.id}`);
                 const indice = this.editoras.indexOf(editor);
                 this.editoras.splice(indice, 1);
             },
