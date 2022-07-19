@@ -46,6 +46,9 @@
       "edit": "Rocco",
       "site": "https://www.rocco.com.br/",
       "id": 4
+    },
+    {
+      "id": 5
     }
   ],
   "categorias": [
@@ -73,6 +76,9 @@
       "catego": "Sobrevivencia",
       "desc": "Categoria pra te ajudar nos momentos dificieis ",
       "id": 5
+    },
+    {
+      "id": 6
     }
   ],
   "autores": [
@@ -90,6 +96,9 @@
       "nome": "George Orwell",
       "obra": "1987",
       "id": 3
+    },
+    {
+      "id": 4
     }
   ]
 }

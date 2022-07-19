@@ -23,13 +23,13 @@ export default {
   methods: {
     async salvar() {
       if (this.livro.id) {
-        await editorasApi.atualizarEditora(this.time);
-        await categoriasApi.atualizarCategoria(this.time);
-        await autoresApi.atualizarAutor(this.time);
+        await editorasApi.atualizarEditora(this.livro);
+        await categoriasApi.atualizarCategoria(this.livro);
+        await autoresApi.atualizarAutor(this.livro);
       } else {
-        await editorasApi.adicionarEditora(this.time);
-        await categoriasApi.adicionarCategoria(this.time);
-        await autoresApi.adicionarAutor(this.time);
+        await editorasApi.adicionarEditora(this.livro);
+        await categoriasApi.adicionarCategoria(this.livro);
+        await autoresApi.adicionarAutor(this.livro);
       }
       this.editoras = await editorasApi.buscarTodasAsEditoras();
       this.categorias = await categoriasApi.buscarTodasAsCategorias();
@@ -37,8 +37,8 @@ export default {
       this.livro = {};
   },
   async excluir(livro) {
-    await 
-  }
+  },
+},
 };
 </script>
 
