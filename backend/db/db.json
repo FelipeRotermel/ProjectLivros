@@ -28,27 +28,9 @@
   ],
   "editoras": [
     {
-      "edit": "Jambo",
-      "site": "jeej",
+      "nome": "Rocco",
+      "site_editora": "https://www.rocco.com.br/",
       "id": 1
-    },
-    {
-      "edit": "Companhia da Letras",
-      "site": "https://www.companhiadasletras.com.br/",
-      "id": 2
-    },
-    {
-      "edit": "Aleph",
-      "site": "https://editoraaleph.com.br/",
-      "id": 3
-    },
-    {
-      "edit": "Rocco",
-      "site": "https://www.rocco.com.br/",
-      "id": 4
-    },
-    {
-      "id": 5
     }
   ],
   "categorias": [
