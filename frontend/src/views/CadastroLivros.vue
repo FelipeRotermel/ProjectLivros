@@ -5,7 +5,6 @@ import AutoresApi from "@/api/autores.js";
 const editorasApi = new EditorasApi();
 const categoriasApi = new CategoriasApi();
 const autoresApi = new AutoresApi();
-import axios from "axios";
 export default {
   data() {
     return {

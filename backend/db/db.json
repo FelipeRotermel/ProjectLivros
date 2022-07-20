@@ -53,52 +53,21 @@
   ],
   "categorias": [
     {
-      "catego": "Horror",
-      "desc": "Horripilante! urrrr",
+      "nome": "OHH",
+      "descricao": "Ma gahh",
       "id": 1
-    },
-    {
-      "catego": "Ficção ",
-      "desc": "Uma categoria maluca",
-      "id": 2
-    },
-    {
-      "catego": "Fantasia",
-      "desc": "Viaje para um mundo novo e afins",
-      "id": 3
-    },
-    {
-      "catego": "Auto-ajuda",
-      "desc": "Categoria pra por sua vida no lugar",
-      "id": 4
-    },
-    {
-      "catego": "Sobrevivencia",
-      "desc": "Categoria pra te ajudar nos momentos dificieis ",
-      "id": 5
-    },
-    {
-      "id": 6
     }
   ],
   "autores": [
     {
-      "nome": "J.K Rowling",
-      "obra": "Harry potter , saga inteira",
+      "nome": "hoooh",
+      "obra_p": "Bangalore",
       "id": 1
     },
     {
-      "nome": "C.S. Lewis",
-      "obra": "Cronicas de narnia",
+      "nome": "Goofy ahh uncle",
+      "obra_p": "quandale nutsack ",
       "id": 2
-    },
-    {
-      "nome": "George Orwell",
-      "obra": "1987",
-      "id": 3
-    },
-    {
-      "id": 4
     }
   ]
 }

@@ -1,35 +1,33 @@
 <script>
-import axios from "axios";
+import CategoriasApi from "@/api/categorias.js";
+const categoriasApi = new CategoriasApi();
 export default {
   data() {
     return {
-      nova_cate: "",
-      descricacao: "",
+      categoria: {},
+      descricao: {},
       categorias: [],
     };
   },
   async created() {
-    const categorias = await axios.get("http://localhost:4000/categorias");
-    this.categorias = categorias.data;
+    this.categorias = await categoriasApi.buscarTodasAsCategorias();
   },
   methods: {
     async salvar() {
-      const categoria = {
-        catego: this.nova_cate,
-        desc: this.descricacao,
-      };
-      const categoria_criada = await axios.post(
-        "http://localhost:4000/categorias",
-        categoria
-      );
-      this.categorias.push(categoria_criada.data);
-      this.nova_cate = "";
-      this.descricacao = "";
+      if (this.categoria.id) {
+        await categoriasApi.atualizarCategoria(this.categoria);
+      } else {
+        await categoriasApi.adicionarCategoria(this.categoria);
+      }
+      this.categorias = await categoriasApi.buscarTodasAsCategorias();
+      (this.descricao = {}), (this.categoria = {});
     },
     async excluir(categoria) {
-      await axios.delete(`http://localhost:4000/categorias/${categoria.id}`);
-      const indice = this.categorias.indexOf(categoria);
-      this.categorias.splice(indice, 1);
+      await categoriasApi.excluirCategoria(categoria.id);
+      this.categorias = await categoriasApi.buscarTodasAsCategorias();
+    },
+    editar(categoria) {
+      Object.assign(this.categoria, categoria);
     },
   },
 };
@@ -48,7 +46,7 @@ export default {
           name=""
           id=""
           placeholder="Adicione sua Categoria"
-          v-model="nova_cate"
+          v-model="categoria.nome"
         />
         <input
           class="form-control"
@@ -56,7 +54,7 @@ export default {
           name=""
           id=""
           placeholder="Adicione sua Descrição"
-          v-model="descricacao"
+          v-model="categoria.descricao"
         />
         <button class="btn btn-secondary" @click="salvar">Salvar</button>
       </div>
@@ -66,17 +64,23 @@ export default {
             <th scope="col">ID</th>
             <th scope="col">Categoria</th>
             <th scope="col">Descrição</th>
-            <th scope="col">Ações</th>
+            <th scope="col">Excluir</th>
+            <th scope="col">Atualizar</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="categoria in categorias" :key="categoria.id">
             <th>{{ categoria.id }}</th>
-            <th>{{ categoria.catego }}</th>
-            <th>{{ categoria.desc }}</th>
+            <th>{{ categoria.nome }}</th>
+            <th>{{ categoria.descricao }}</th>
             <th>
               <button class="btn btn-danger btn-sm" @click="excluir(categoria)">
                 Excluir
+              </button>
+            </th>
+               <th>
+              <button class="btn btn-success btn-sm" @click="editar(categoria)">
+                Atualizar
               </button>
             </th>
           </tr>
