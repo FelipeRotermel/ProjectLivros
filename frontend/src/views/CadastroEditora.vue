@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     async salvar() {
-      if (this.editoras.id) {
+      if (this.editora.id) {
         await editorasApi.atualizarEditora(this.editora);
       } else {
         await editorasApi.adicionarEditora(this.editora);
@@ -49,6 +49,7 @@ export default {
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th scope="col">ID</th>
                         <th scope="col">Editora</th>
                         <th scope="col">Site</th>
                         <th scope="col">Excluir</th>
@@ -57,6 +58,7 @@ export default {
                 </thead>
                 <tbody>
                     <tr v-for="editora in editoras" :key="editora.id">
+                        <th>{{ editora.id }}</th>
                         <th>{{ editora.nome }}</th>
                         <th>{{ editora.site_editora }} </th>
                         <th><button class="btn btn-danger btn-sm" @click="excluir(editora)">Excluir</button></th>
