@@ -103,7 +103,7 @@ export default {
             <th>{{ livro.categoria }}</th>
             <th>{{ livro.editora }}</th>
             <th>{{ livro.autor }}</th>
-            <th>{{ livro.preco }}</th>
+            <th>{{ livro.preco + .99  }}</th>
             <th>
               <button class="btn btn-danger btn-sm" @click="excluir(livro)">
                 Excluir

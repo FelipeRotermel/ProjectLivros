@@ -1,19 +1,11 @@
 {
   "cadastrolivros": [
     {
-      "nome": "As Cronicas de narnia",
-      "categoria": "Fantasia ",
-      "editora": "Compania das letras",
-      "autor": "C.S. Lewis",
-      "preco": 50,
-      "id": 1
-    },
-    {
       "nome": "fs",
       "categoria": "Fantasia ",
       "editora": "Rocco",
       "autor": "Goofy ahh uncle",
-      "preco": 50.04,
+      "preco": 50,
       "id": 3
     }
   ],
