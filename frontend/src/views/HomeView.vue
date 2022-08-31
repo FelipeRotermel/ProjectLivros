@@ -7,7 +7,7 @@
       <p>Tudo de livros que você procura está aqui!</p>
       <h1>Books Everywhere</h1>
       <p>Criado por Paulo José Ramos Zem e Felipe Rotermel usando:</p>
-      <p><img src="@/assets/pobre.png"></p>
+      <p><img src="https://www.ocarafashion.com/wp-content/uploads/2020/10/adidas-adilette-clog-release-date-price-07.jpg" width="1000"></p>
     <p><iframe width="150" height="200" src="https://www.myinstants.com/instant/aughhhh-tiktok-40656/embed/" frameborder="0" scrolling="no"></iframe></p>
    </div>
   </div>
