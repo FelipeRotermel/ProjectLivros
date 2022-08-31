@@ -21,19 +21,19 @@ export default {
   },
   methods: {
     async buscarTodasAsEditoras() {
-      const editoras = await axios.get("http://localhost:4000/editoras");
+      const editoras = await axios.get("https://bookseverywhere.herokuapp.com/editoras");
       this.editoras = editoras.data;
       },
     async buscarTodasAsCategorias() {
-      const categorias = await axios.get("http://localhost:4000/categorias");
+      const categorias = await axios.get("https://bookseverywhere.herokuapp.com/categorias");
       this.categorias = categorias.data;
       },
     async buscarTodosOsAutores() {
-      const autores = await axios.get("http://localhost:4000/autores");
+      const autores = await axios.get("https://bookseverywhere.herokuapp.com/autores");
       this.autores = autores.data;
       },
     async buscarTodosOsLivros() {
-      const livros = await axios.get("http://localhost:4000/cadastrolivros");
+      const livros = await axios.get("https://bookseverywhere.herokuapp.com/cadastrolivros");
       this.livros = livros.data;
       },
     async salvar() {
